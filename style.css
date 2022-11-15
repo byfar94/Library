@@ -1,0 +1,182 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*<----------------html------------------------------>*/
+
+header{
+    position: relative;
+}
+
+
+/*<---------------Header----------------------------->*/
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 1px 1px 5px rgb(145, 145, 145);
+}
+
+.container div{
+    display: flex;
+    align-items: center;
+}
+
+.container div img{
+    max-width: 50%;
+}
+
+/*<---------------background-----------------------?*/
+
+.background{
+    display: none;
+    position: absolute;
+    z-index: 5;
+}
+
+.background-active{
+    z-index: 5;
+    display: block;
+    position:fixed;
+    padding:0;
+    margin:0;
+
+    top:0;
+    left:0;
+
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.7);
+}
+
+/*<---------------form----------------------------->*/
+.pop-up{
+    display: none;
+}
+
+.pop-up-in{
+    display: block;
+    background-color: lightcoral;
+    border-radius: 1rem;
+    padding: 2rem;
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.pop-up h2, .pop-up-in h2{
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.book-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.book-form input{
+    border-radius: 0.25rem;
+    border: none;
+}
+
+/*<---------------main-content-container------------>*/
+
+.container-m{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    margin: 1rem;
+}
+
+.container-m div{
+    border-radius: 1rem;
+    background-color: aquamarine;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-m div p{
+    margin: 0.25rem;
+
+}

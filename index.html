@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div>
+                <img src="Images/bookshelf.svg" alt="Book Icon">
+                <h2>Library</h2>
+            </div>
+            <div>
+                <button class="book-btn">Add Book</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="pop-up">
+            <div class="add-book-container">
+                <h2>New book</h2>
+                <form class="book-form">
+                    <input type="text" id="title" name="title" placeholder="Title">
+                    <input type="text" id="author" name="author" placeholder="Author">
+                    <input type="number" id="page-number" name="page-number" placeholder="Pages">
+                    <div>
+                        <label for="read">Have you read it?</label>
+                        <input type="checkbox" id="read" name="read">
+                    </div>
+                    <button class="populate-book" type="submit">submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="container-m">
+        </div>
+    </main>
+    <div class="background"></div>
+    <script src="script.js"></script>
+</body>
+</html>
