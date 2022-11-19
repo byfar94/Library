@@ -30,14 +30,12 @@ function book (title, author, pages, read){
 }
 
 
-
-let HP = new book ("Harry Potter", "J.K. Rowling.", "202", "Read" );
-
-let CS = new book ("javascript tutorial", "John Smith", "300", "Not Read");
+//default book for show
+let HP = new book ("Title", "Author", "555", "Read" );
 
 myLibrary.push(HP);
 
-myLibrary.push(CS);
+
 
 /* <----------------------eventListeners---------------------------->*/
 
@@ -85,6 +83,17 @@ function renderBook (){
         bookContain.dataset.index = [i];
         mainContainer.appendChild(bookContain);
 
+        //delete button
+        let deleteButton = document.createElement("button");
+        deleteButton.classList.add("btn");
+        deleteButton.classList.add("delete-btn");
+        deleteButton.dataset.index = [i];
+        bookContain.appendChild(deleteButton);
+        var img = document.createElement("img");
+        img.setAttribute("src", "Images/trash-can.svg");
+        img.classList.add("trash-img");
+        deleteButton.appendChild(img);
+
         //title
         let titlePara = document.createElement("h2");
         titlePara.innerText = myLibrary[i].title;
@@ -105,23 +114,16 @@ function renderBook (){
         readButton.classList.add("btn");
         if (myLibrary[i].read == "Read") {
         readButton.innerText = myLibrary[i].read;
-        readButton.classList.remove("green-btn");
-        readButton.classList.add("red-btn");
-        bookContain.appendChild(readButton);
-        }
-        else {
-        readButton.innerText = myLibrary[i].read;
         readButton.classList.remove("red-btn");
         readButton.classList.add("green-btn");
         bookContain.appendChild(readButton);
         }
-        //delete button
-        let deleteButton = document.createElement("button");
-        deleteButton.classList.add("btn");
-        deleteButton.classList.add("delete-btn");
-        deleteButton.dataset.index = [i];
-        deleteButton.innerText = "Delete Book"
-        bookContain.appendChild(deleteButton);
+        else {
+        readButton.innerText = myLibrary[i].read;
+        readButton.classList.remove("green-btn");
+        readButton.classList.add("red-btn");
+        bookContain.appendChild(readButton);
+        }
         
         //event listeners
         deleteButton.addEventListener("click", function(){
